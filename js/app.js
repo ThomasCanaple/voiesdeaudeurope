@@ -49,12 +49,12 @@
         {
           id:    't1-histoire',
           title: 'Tome 1 — Histoire',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/tome1_-_Histoire.pdf'
+          file:  'pdf/tome1_-_Histoire.pdf'
         },
         {
           id:    't1-soliton',
           title: 'Annexe Tome 1 : Le Soliton',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/soliton.pdf'
+          file:  'pdf/soliton.pdf'
         }
       ]
     },
@@ -66,57 +66,57 @@
         {
           id:    't2-ch1',
           title: 'Chapitre 1 — Écluses en bois',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre1_Les_ecluses_en_bois.pdf'
+          file:  'pdf/Tome2_Chapitre1_Les_ecluses_en_bois.pdf'
         },
         {
           id:    't2-ch2',
           title: 'Chapitre 2 — Forme des écluses',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre2_Forme_des_ecluses.pdf'
+          file:  'pdf/Tome2_Chapitre2_Forme_des_ecluses.pdf'
         },
         {
           id:    't2-ch3',
           title: 'Chapitre 3 — Tours de contrôle',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre3_Tours_de_controle.pdf'
+          file:  'pdf/Tome2_Chapitre3_Tours_de_controle.pdf'
         },
         {
           id:    't2-ch4',
           title: 'Chapitre 4 — Postes de travail',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre4_Les_postes_de_travail.pdf'
+          file:  'pdf/Tome2_Chapitre4_Les_postes_de_travail.pdf'
         },
         {
           id:    't2-ch5',
           title: 'Chapitre 5 — Matériaux de construction',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre5_Materiaux_de_construction_des_ecluses.pdf'
+          file:  'pdf/Tome2_Chapitre5_Materiaux_de_construction_des_ecluses.pdf'
         },
         {
           id:    't2-ch6',
           title: 'Chapitre 6 — Disposition des écluses',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre6_Disposition_des_ecluses.pdf'
+          file:  'pdf/Tome2_Chapitre6_Disposition_des_ecluses.pdf'
         },
         {
           id:    't2-ch7',
           title: 'Chapitre 7 — Échelles d\'écluses',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre7_echelles_d_ecluse.pdf'
+          file:  'pdf/Tome2_Chapitre7_echelles_d_ecluse.pdf'
         },
         {
           id:    't2-ch8',
           title: 'Chapitre 8 — Bassin d\'épargne',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre8_bassin_d_epargne.pdf'
+          file:  'pdf/Tome2_Chapitre8_bassin_d_epargne.pdf'
         },
         {
           id:    't2-ch10',
           title: 'Chapitre 10 — Les moulins',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre10_Moulins.pdf'
+          file:  'pdf/Tome2_Chapitre10_Moulins.pdf'
         },
         {
           id:    't2-ch11',
           title: 'Chapitre 11 — Vapeur',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre11_Vapeur.pdf'
+          file:  'pdf/Tome2_Chapitre11_Vapeur.pdf'
         },
         {
           id:    't2-ch12',
           title: 'Chapitre 12 — Les portes',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre12_Les_portes.pdf'
+          file:  'pdf/Tome2_Chapitre12_Les_portes.pdf'
         }
       ]
     },
@@ -128,22 +128,22 @@
         {
           id:    't3-p1',
           title: 'Tome 3 — Partie 1',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome3_Partie1.pdf'
+          file:  'pdf/Tome3_Partie1.pdf'
         },
         {
           id:    't3-p2',
           title: 'Tome 3 — Partie 2',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome3_Partie2.pdf'
+          file:  'pdf/Tome3_Partie2.pdf'
         },
         {
           id:    't3-p3',
           title: 'Tome 3 — Partie 3',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome3_Partie3.pdf'
+          file:  'pdf/Tome3_Partie3.pdf'
         },
         {
           id:    't3-p4',
           title: 'Tome 3 — Partie 4',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome3_Partie4.pdf'
+          file:  'pdf/Tome3_Partie4.pdf'
         }
       ]
     },
@@ -155,22 +155,22 @@
         {
           id:    't4-p1',
           title: 'Tome 4 — Partie 1',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-4-partie-1.pdf'
+          file:  'pdf/Tome-4-partie-1.pdf'
         },
         {
           id:    't4-p2',
           title: 'Tome 4 — Partie 2',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-4-partie-2.pdf'
+          file:  'pdf/Tome-4-partie-2.pdf'
         },
         {
           id:    't4-p3',
           title: 'Tome 4 — Partie 3',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-4-partie-3.pdf'
+          file:  'pdf/Tome-4-partie-3.pdf'
         },
         {
           id:    't4-p4',
           title: 'Tome 4 — Partie 4',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-4-partie-4.pdf'
+          file:  'pdf/Tome-4-partie-4.pdf'
         }
       ]
     },
@@ -182,22 +182,22 @@
         {
           id:    't5-p1',
           title: 'Tome 5 — Partie 1',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-5-partie-1.pdf'
+          file:  'pdf/Tome-5-partie-1.pdf'
         },
         {
           id:    't5-p2',
           title: 'Tome 5 — Partie 2',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-5-partie-2.pdf'
+          file:  'pdf/Tome-5-partie-2.pdf'
         },
         {
           id:    't5-p3',
           title: 'Tome 5 — Partie 3',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-5-partie-3.pdf'
+          file:  'pdf/Tome-5-partie-3.pdf'
         },
         {
           id:    't5-p4',
           title: 'Tome 5 — Partie 4',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-5-partie-4.pdf'
+          file:  'pdf/Tome-5-partie-4.pdf'
         }
       ]
     },
@@ -209,17 +209,17 @@
         {
           id:    't6-p1',
           title: 'Tome 6 — Partie 1',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-6-partie-1.pdf'
+          file:  'pdf/Tome-6-partie-1.pdf'
         },
         {
           id:    't6-p2',
           title: 'Tome 6 — Partie 2',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-6-partie-2.pdf'
+          file:  'pdf/Tome-6-partie-2.pdf'
         },
         {
           id:    't6-p3',
           title: 'Tome 6 — Partie 3',
-          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-6-partie-3.pdf',
+          file:  'pdf/Tome-6-partie-3.pdf',
           /*
            * This document carries a closing note from the editor.
            * It is displayed in the modal below the PDF viewer.
