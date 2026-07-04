@@ -49,12 +49,12 @@
         {
           id:    't1-histoire',
           title: 'Tome 1 — Histoire',
-          file:  'pdf/tome1_-_Histoire.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/tome1_-_Histoire.pdf'
         },
         {
           id:    't1-soliton',
           title: 'Annexe Tome 1 : Le Soliton',
-          file:  'pdf/soliton.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/soliton.pdf'
         }
       ]
     },
@@ -66,57 +66,57 @@
         {
           id:    't2-ch1',
           title: 'Chapitre 1 — Écluses en bois',
-          file:  'pdf/Tome2_Chapitre1_Les_ecluses_en_bois.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre1_Les_ecluses_en_bois.pdf'
         },
         {
           id:    't2-ch2',
           title: 'Chapitre 2 — Forme des écluses',
-          file:  'pdf/Tome2_Chapitre2_Forme_des_ecluses.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre2_Forme_des_ecluses.pdf'
         },
         {
           id:    't2-ch3',
           title: 'Chapitre 3 — Tours de contrôle',
-          file:  'pdf/Tome2_Chapitre3_Tours_de_controle.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre3_Tours_de_controle.pdf'
         },
         {
           id:    't2-ch4',
           title: 'Chapitre 4 — Postes de travail',
-          file:  'pdf/Tome2_Chapitre4_Les_postes_de_travail.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre4_Les_postes_de_travail.pdf'
         },
         {
           id:    't2-ch5',
           title: 'Chapitre 5 — Matériaux de construction',
-          file:  'pdf/Tome2_Chapitre5_Materiaux_de_construction_des_ecluses.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre5_Materiaux_de_construction_des_ecluses.pdf'
         },
         {
           id:    't2-ch6',
           title: 'Chapitre 6 — Disposition des écluses',
-          file:  'pdf/Tome2_Chapitre6_Disposition_des_ecluses.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre6_Disposition_des_ecluses.pdf'
         },
         {
           id:    't2-ch7',
           title: 'Chapitre 7 — Échelles d\'écluses',
-          file:  'pdf/Tome2_Chapitre7_echelles_d_ecluse.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre7_echelles_d_ecluse.pdf'
         },
         {
           id:    't2-ch8',
           title: 'Chapitre 8 — Bassin d\'épargne',
-          file:  'pdf/Tome2_Chapitre8_bassin_d_epargne.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre8_bassin_d_epargne.pdf'
         },
         {
           id:    't2-ch10',
           title: 'Chapitre 10 — Les moulins',
-          file:  'pdf/Tome2_Chapitre10_Moulins.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre10_Moulins.pdf'
         },
         {
           id:    't2-ch11',
           title: 'Chapitre 11 — Vapeur',
-          file:  'pdf/Tome2_Chapitre11_Vapeur.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre11_Vapeur.pdf'
         },
         {
           id:    't2-ch12',
           title: 'Chapitre 12 — Les portes',
-          file:  'pdf/Tome2_Chapitre12_Les_portes.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome2_Chapitre12_Les_portes.pdf'
         }
       ]
     },
@@ -128,22 +128,22 @@
         {
           id:    't3-p1',
           title: 'Tome 3 — Partie 1',
-          file:  'pdf/Tome3_Partie1.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome3_Partie1.pdf'
         },
         {
           id:    't3-p2',
           title: 'Tome 3 — Partie 2',
-          file:  'pdf/Tome3_Partie2.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome3_Partie2.pdf'
         },
         {
           id:    't3-p3',
           title: 'Tome 3 — Partie 3',
-          file:  'pdf/Tome3_Partie3.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome3_Partie3.pdf'
         },
         {
           id:    't3-p4',
           title: 'Tome 3 — Partie 4',
-          file:  'pdf/Tome3_Partie4.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome3_Partie4.pdf'
         }
       ]
     },
@@ -155,22 +155,22 @@
         {
           id:    't4-p1',
           title: 'Tome 4 — Partie 1',
-          file:  'pdf/Tome-4-partie-1.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-4-partie-1.pdf'
         },
         {
           id:    't4-p2',
           title: 'Tome 4 — Partie 2',
-          file:  'pdf/Tome-4-partie-2.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-4-partie-2.pdf'
         },
         {
           id:    't4-p3',
           title: 'Tome 4 — Partie 3',
-          file:  'pdf/Tome-4-partie-3.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-4-partie-3.pdf'
         },
         {
           id:    't4-p4',
           title: 'Tome 4 — Partie 4',
-          file:  'pdf/Tome-4-partie-4.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-4-partie-4.pdf'
         }
       ]
     },
@@ -182,22 +182,22 @@
         {
           id:    't5-p1',
           title: 'Tome 5 — Partie 1',
-          file:  'pdf/Tome-5-partie-1.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-5-partie-1.pdf'
         },
         {
           id:    't5-p2',
           title: 'Tome 5 — Partie 2',
-          file:  'pdf/Tome-5-partie-2.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-5-partie-2.pdf'
         },
         {
           id:    't5-p3',
           title: 'Tome 5 — Partie 3',
-          file:  'pdf/Tome-5-partie-3.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-5-partie-3.pdf'
         },
         {
           id:    't5-p4',
           title: 'Tome 5 — Partie 4',
-          file:  'pdf/Tome-5-partie-4.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-5-partie-4.pdf'
         }
       ]
     },
@@ -209,17 +209,17 @@
         {
           id:    't6-p1',
           title: 'Tome 6 — Partie 1',
-          file:  'pdf/Tome-6-partie-1.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-6-partie-1.pdf'
         },
         {
           id:    't6-p2',
           title: 'Tome 6 — Partie 2',
-          file:  'pdf/Tome-6-partie-2.pdf'
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-6-partie-2.pdf'
         },
         {
           id:    't6-p3',
           title: 'Tome 6 — Partie 3',
-          file:  'pdf/Tome-6-partie-3.pdf',
+          file:  'https://www.voiesdeaudeurope.eu/pdf/Tome-6-partie-3.pdf',
           /*
            * This document carries a closing note from the editor.
            * It is displayed in the modal below the PDF viewer.
@@ -319,6 +319,10 @@
    * 3. PDF MODAL VIEWER
    * ============================================================== */
 
+  function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+  }
+
   /**
    * Open the PDF viewer modal for the given document id.
    * If the document has a citation property, display it below the viewer.
@@ -333,9 +337,6 @@
 
     /* Update modal title */
     $('#pdfModalLabel').text(doc.title);
-
-    /* Set iframe source — this triggers PDF loading */
-    $('#pdf-viewer').attr('src', doc.file);
 
     /* Update both download links */
     var downloadLabel = 'Télécharger\u00a0— ' + doc.title;
@@ -362,6 +363,49 @@
       $citationBlock.addClass('d-none');
       $citationText.empty();
     }
+
+    if (isMobileDevice()) {
+      window.open(doc.file, '_blank');
+      return;
+    }
+
+    var $pdfContainer = $('.pdf-container');
+    var $iframe = $('#pdf-viewer');
+
+    $pdfContainer.find('.pdf-loading-spinner, .pdf-error-message').remove();
+    $iframe.show().off('.pdfViewer');
+
+    /* Afficher spinner de chargement avant le chargement du PDF */
+    var $spinner = $('<div class="pdf-loading-spinner d-flex align-items-center justify-content-center">' +
+      '<div class="spinner-border text-light" role="status">' +
+      '<span class="sr-only">Chargement du document\u2026</span></div></div>');
+    $pdfContainer.append($spinner);
+
+    $iframe.one('load.pdfViewer', function () {
+      $spinner.remove();
+    });
+
+    $iframe.one('error.pdfViewer', function () {
+      $spinner.remove();
+      $iframe.hide();
+      $pdfContainer.find('.pdf-error-message').remove();
+
+      var $errorMessage = $('<div class="pdf-error-message"></div>');
+      $errorMessage.append(
+        $('<p class="mb-3"></p>').text('Le document n’a pas pu être chargé. Vous pouvez le télécharger directement.')
+      );
+      $errorMessage.append(
+        $('<a></a>')
+          .attr('href', doc.file)
+          .attr('download', '')
+          .attr('aria-label', downloadLabel)
+          .text(downloadLabel)
+      );
+      $pdfContainer.append($errorMessage);
+    });
+
+    /* Set iframe source — this triggers PDF loading */
+    $iframe.attr('src', doc.file);
 
     /* Open the Bootstrap 4 modal */
     $('#pdfModal').modal('show');

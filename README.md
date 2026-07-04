@@ -142,4 +142,4 @@ de couleur s'affiche seul.
 
 - Navbar collapse sur téléphone (hamburger menu)
 - Visionneuse PDF adaptée à la hauteur de l'écran (`75vh` / `55vh` mobile)
-- Notice informative sur mobile pour les limitations du viewer PDF natif
+- Sur mobile (iOS/Android), les PDF s'ouvrent automatiquement dans un nouvel onglet
