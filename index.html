@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description"
+        content="Voies d'Eau d'Europe — Association dédiée aux voies navigables intérieures européennes." />
+
+  <title>Voies d'Eau d'Europe</title>
+
+  <!--
+    Dependency load order (Bootstrap 4 requires jQuery & Popper.js):
+      CSS: Bootstrap → Font Awesome → Custom styles
+      JS:  jQuery → Popper.js → Bootstrap → App
+  -->
+
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+        crossorigin="anonymous" />
+
+  <!-- Font Awesome 5 (icons) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW37q1lNfXHFSRYMTWVTYWzFWMCz3tHvYDfEMOv4WjM5rh5V2eNEYz4Fg2N6+t1Qr9t4A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts: Raleway (headings) + Open Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- Skip-to-content link for keyboard / screen-reader users -->
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <!-- ==========================================================
+       NAVIGATION
+       Sticky navbar with brand, anchor links, and a dropdown
+       menu whose items link each entry to a PDF document.
+       Items inside #documents-dropdown-menu are injected by
+       app.js from the documents[] configuration array.
+       ========================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top"
+       role="navigation" aria-label="Navigation principale">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="#accueil">
+        <i class="fas fa-water mr-2" aria-hidden="true"></i>
+        <span>Voies d'Eau d'Europe</span>
+      </a>
+
+      <!-- Mobile collapse toggle -->
+      <button class="navbar-toggler" type="button"
+              data-toggle="collapse" data-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false"
+              aria-label="Basculer la navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation links -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#accueil">Accueil</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#about">À Propos</a>
+          </li>
+
+          <!-- Documents dropdown — entries injected by app.js -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#"
+               id="navDocuments" role="button"
+               data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+              Documents
+            </a>
+            <div class="dropdown-menu dropdown-menu-right"
+                 id="documents-dropdown-menu"
+                 aria-labelledby="navDocuments">
+              <!-- Populated dynamically by app.js -->
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- /Navigation -->
+
+  <main id="main-content">
+
+    <!-- ==========================================================
+         HERO SECTION
+         Full-viewport introduction with gradient overlay.
+         The background image (assets/hero-bg.jpg) is optional;
+         the gradient stands alone if the image is absent.
+         ========================================================== -->
+    <section id="accueil" class="hero-section d-flex align-items-center"
+             aria-label="En-tête du site">
+      <div class="container text-center text-white">
+        <h1 class="hero-title display-4 font-weight-bold">
+          Voies d'Eau d'Europe
+        </h1>
+        <p class="hero-subtitle lead mt-3 mb-4">
+          Exploration et préservation des voies navigables intérieures européennes
+        </p>
+        <a href="#documents" class="btn btn-light btn-lg px-5"
+           role="button">
+          <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
+          Découvrir nos documents
+        </a>
+      </div>
+    </section>
+    <!-- /Hero -->
+
+    <!-- ==========================================================
+         ABOUT SECTION
+         Association presentation and key statistics.
+         ========================================================== -->
+    <section id="about" class="py-5 bg-light" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="row align-items-center">
+
+          <!-- Text block -->
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 id="about-heading" class="section-title">
+              À Propos de l'Association
+            </h2>
+            <p class="text-muted">
+              Voies d'Eau d'Europe est une association dédiée à la promotion,
+              à l'étude et à la préservation des voies navigables intérieures
+              européennes. Nous rassemblons passionnés, professionnels et
+              institutions autour d'un patrimoine commun : les fleuves, rivières
+              et canaux qui ont façonné l'histoire et l'économie de l'Europe.
+            </p>
+            <p class="text-muted">
+              Notre mission est de fournir des ressources documentaires fiables,
+              de soutenir la navigation de plaisance et commerciale, et de
+              contribuer à la politique européenne des transports fluviaux.
+            </p>
+            <a href="#documents" class="btn btn-outline-primary">
+              Nos publications
+              <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <!-- Statistics grid -->
+          <div class="col-lg-6">
+            <div class="row">
+
+              <div class="col-6 mb-3">
+                <div class="stat-card text-center p-4 bg-white rounded shadow-sm">
+                  <i class="fas fa-route fa-2x text-primary mb-2"
+                     aria-hidden="true"></i>
+                  <div class="stat-number font-weight-bold h4">37 000 km</div>
+                  <div class="text-muted small">de voies navigables</div>
+                </div>
+              </div>
+
+              <div class="col-6 mb-3">
+                <div class="stat-card text-center p-4 bg-white rounded shadow-sm">
+                  <i class="fas fa-flag fa-2x text-primary mb-2"
+                     aria-hidden="true"></i>
+                  <div class="stat-number font-weight-bold h4">20+ pays</div>
+                  <div class="text-muted small">membres du réseau</div>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="stat-card text-center p-4 bg-white rounded shadow-sm">
+                  <i class="fas fa-ship fa-2x text-primary mb-2"
+                     aria-hidden="true"></i>
+                  <div class="stat-number font-weight-bold h4">500 écluses</div>
+                  <div class="text-muted small">répertoriées</div>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="stat-card text-center p-4 bg-white rounded shadow-sm">
+                  <i class="fas fa-users fa-2x text-primary mb-2"
+                     aria-hidden="true"></i>
+                  <div class="stat-number font-weight-bold h4">1 200+</div>
+                  <div class="text-muted small">membres actifs</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /About -->
+
+    <!-- ==========================================================
+         DOCUMENTS SECTION
+         Document cards are generated dynamically by app.js from
+         the documents[] configuration array in js/app.js.
+         To add a new entry, edit that array — no HTML change needed.
+         ========================================================== -->
+    <section id="documents" class="py-5" aria-labelledby="documents-heading">
+      <div class="container">
+
+        <div class="text-center mb-5">
+          <h2 id="documents-heading" class="section-title">Nos Documents</h2>
+          <p class="text-muted">
+            Consultez directement nos publications sur les voies navigables
+            européennes — aucun téléchargement requis.
+          </p>
+        </div>
+
+        <!-- Cards are injected here by app.js -->
+        <div class="row" id="documents-cards" role="list"
+             aria-label="Liste des documents disponibles">
+        </div>
+
+      </div>
+    </section>
+    <!-- /Documents -->
+
+    <!-- ==========================================================
+         CONTACT SECTION
+         ========================================================== -->
+    <section id="contact" class="py-5 bg-light"
+             aria-labelledby="contact-heading">
+      <div class="container">
+
+        <div class="text-center mb-4">
+          <h2 id="contact-heading" class="section-title">Contact</h2>
+          <p class="text-muted">
+            N'hésitez pas à nous contacter pour toute information.
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+              <div class="card-body p-4">
+
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-envelope fa-lg text-primary mr-3"
+                     aria-hidden="true"></i>
+                  <a href="mailto:contact@voiesdeaudeurope.eu">
+                    contact@voiesdeaudeurope.eu
+                  </a>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-globe fa-lg text-primary mr-3"
+                     aria-hidden="true"></i>
+                  <a href="https://www.voiesdeaudeurope.eu"
+                     target="_blank" rel="noopener noreferrer">
+                    www.voiesdeaudeurope.eu
+                  </a>
+                </div>
+
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-map-marker-alt fa-lg text-primary mr-3"
+                     aria-hidden="true"></i>
+                  <span class="text-muted">Europe</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /Contact -->
+
+  </main>
+
+  <!-- ==========================================================
+       FOOTER
+       ========================================================== -->
+  <footer class="footer py-4 bg-dark text-white" role="contentinfo">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-md-6 text-center text-md-left">
+          <span class="small">
+            &copy; <span id="current-year"></span>
+            Voies d'Eau d'Europe. Tous droits réservés.
+          </span>
+        </div>
+
+        <div class="col-md-6 text-center text-md-right mt-2 mt-md-0">
+          <a href="#accueil"   class="text-white-50 small mr-3">Accueil</a>
+          <a href="#about"     class="text-white-50 small mr-3">À Propos</a>
+          <a href="#documents" class="text-white-50 small mr-3">Documents</a>
+          <a href="#contact"   class="text-white-50 small">Contact</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!-- /Footer -->
+
+  <!-- ==========================================================
+       PDF VIEWER MODAL
+       Opened programmatically by app.js whenever a document
+       card button or dropdown link is clicked.
+       The <iframe> embeds the PDF inline on desktop; the
+       download link at the bottom acts as a universal fallback.
+       ========================================================== -->
+  <div class="modal fade" id="pdfModal" tabindex="-1" role="dialog"
+       aria-labelledby="pdfModalLabel" aria-modal="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered"
+         role="document">
+      <div class="modal-content">
+
+        <!-- Modal header -->
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="pdfModalLabel">Document</h5>
+          <button type="button" class="close text-white"
+                  data-dismiss="modal" aria-label="Fermer">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <!-- Modal body: inline PDF viewer -->
+        <div class="modal-body p-0">
+
+          <div class="pdf-container">
+            <!--
+              The iframe loads the selected PDF.
+              The fallback paragraph is shown when the browser
+              cannot render PDF inline (some older/mobile browsers).
+            -->
+            <iframe id="pdf-viewer"
+                    src=""
+                    title="Visionneuse PDF"
+                    aria-label="Document PDF affiché en ligne">
+              <p class="p-4 m-0">
+                Votre navigateur ne peut pas afficher ce PDF directement.
+                <a id="pdf-fallback-link" href="" download>
+                  Cliquez ici pour le télécharger.
+                </a>
+              </p>
+            </iframe>
+          </div>
+
+          <!-- Informational notice shown only on small screens -->
+          <div class="d-md-none alert alert-info m-3 mb-0 small"
+               role="alert">
+            <i class="fas fa-info-circle mr-1" aria-hidden="true"></i>
+            Sur mobile, le PDF peut s'ouvrir dans une nouvelle fenêtre
+            ou nécessiter un téléchargement.
+          </div>
+
+        </div>
+        <!-- /Modal body -->
+
+        <!-- Modal footer: download + close -->
+        <div class="modal-footer">
+          <a id="pdf-download-link" href="" download
+             class="btn btn-outline-primary">
+            <i class="fas fa-download mr-1" aria-hidden="true"></i>
+            Télécharger
+          </a>
+          <button type="button" class="btn btn-secondary"
+                  data-dismiss="modal">
+            Fermer
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- /PDF Modal -->
+
+  <!-- ==========================================================
+       SCRIPTS — loaded in the order required by Bootstrap 4:
+         1. jQuery  (Bootstrap 4 dependency)
+         2. Popper.js (required for dropdowns, tooltips, popovers)
+         3. Bootstrap JS
+         4. Application logic (app.js)
+       ========================================================== -->
+
+  <!-- 1. jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"
+          integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+          crossorigin="anonymous"></script>
+
+  <!-- 2. Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+          integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+          crossorigin="anonymous"></script>
+
+  <!-- 3. Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+          integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbZUbe7eZb3TGnD6PivlAgAem3NBoZefpkBu"
+          crossorigin="anonymous"></script>
+
+  <!-- 4. Application script -->
+  <script src="js/app.js"></script>
+
+  <!-- Set the current year in the footer dynamically -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
