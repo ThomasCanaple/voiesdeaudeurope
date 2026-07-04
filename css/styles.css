@@ -8,8 +8,8 @@
      4.  Navbar
      5.  Hero section
      6.  Section titles
-     7.  Stat cards (About section)
-     8.  Document cards
+     7.  Preface section
+     8.  Document tome list
      9.  PDF modal & viewer
      10. Footer
      11. Accessibility utilities
@@ -173,6 +173,12 @@ section[id] {
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
+.hero-logo {
+  max-height: 120px;
+  width:      auto;
+  filter:     drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
 
 /* ------------------------------------------------------------------
    6. SECTION TITLES
@@ -203,40 +209,55 @@ section[id] {
 
 
 /* ------------------------------------------------------------------
-   7. STAT CARDS (About section)
+   7. PREFACE SECTION
    ------------------------------------------------------------------ */
-.stat-card {
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  transition: transform var(--transition), box-shadow var(--transition);
+.preface-text {
+  max-width: 820px;
+  font-size: 1rem;
+  line-height: 1.9;
 }
 
-.stat-card:hover {
-  transform:  translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+.preface-figure {
+  text-align: center;
 }
 
-.stat-number {
-  color: var(--vde-blue);
+.preface-img {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.preface-signature {
+  margin-top:  2rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color:       var(--vde-blue);
+}
+
+.preface-note {
+  font-size: 0.9rem;
 }
 
 
 /* ------------------------------------------------------------------
-   8. DOCUMENT CARDS
+   8. DOCUMENT TOME LIST
    ------------------------------------------------------------------ */
-.document-card {
-  border: 1px solid rgba(0, 0, 0, 0.09);
-  transition: transform var(--transition), box-shadow var(--transition);
+.tome-heading {
+  font-family:    var(--font-heading);
+  font-size:      1.25rem;
+  font-weight:    700;
+  color:          var(--vde-blue);
+  padding-bottom: 0.4rem;
+  margin-bottom:  0.75rem;
+  border-bottom:  2px solid var(--vde-gold);
 }
 
-.document-card:hover {
-  transform:  translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.13) !important;
+.tome-section .list-group-item {
+  font-size: 0.95rem;
 }
 
-.document-card .card-title {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  color:       var(--vde-blue);
+.tome-section .list-group-item span {
+  color: var(--vde-dark);
 }
 
 

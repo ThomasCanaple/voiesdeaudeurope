@@ -2,12 +2,13 @@
  * app.js — Voies d'Eau d'Europe
  *
  * Responsibilities:
- *   1. Menu-to-PDF mapping configuration  (edit here to add documents)
+ *   1. Tomes / documents configuration (edit here to add entries)
  *   2. Dynamic rendering of:
- *        • Navbar dropdown links
- *        • Document cards in the #documents section
+ *        • Navbar dropdown (grouped by Tome, with headers & dividers)
+ *        • Document list in the #documents section (by Tome)
  *   3. PDF modal viewer
  *        • Loads the selected PDF into an <iframe>
+ *        • Shows an optional citation block (e.g. Tome 6, Partie 3)
  *        • Clears the iframe on modal close (stops PDF rendering)
  *        • Provides a download fallback link
  *   4. Event bindings (delegated — works on dynamically-added elements)
@@ -20,118 +21,308 @@
   'use strict';
 
   /* ==============================================================
-   * 1. MENU-TO-PDF CONFIGURATION
+   * 1. TOMES & DOCUMENTS CONFIGURATION
    *
-   * Add, remove, or reorder entries here to update the entire
-   * site without touching any HTML.
+   * Each tome has:
+   *   id        {string}   – unique slug
+   *   label     {string}   – heading shown in the UI
+   *   icon      {string}   – Font Awesome 5 class for the heading
+   *   documents {Array}    – list of documents in that tome
    *
-   * Each entry accepts:
-   *   id    {string} – Unique slug used as a data attribute key.
-   *   title {string} – Human-readable name shown in the UI.
-   *   desc  {string} – Short description displayed on the card.
-   *   file  {string} – Path to the PDF relative to index.html.
-   *   icon  {string} – Font Awesome 5 class (optional, defaults to
-   *                    'fa-file-pdf').
+   * Each document has:
+   *   id       {string}   – unique slug (used as data-doc-id)
+   *   title    {string}   – human-readable name shown in the UI
+   *   file     {string}   – URL or path to the PDF
+   *   citation {string}   – (optional) note displayed in the modal
+   *                         below the PDF viewer
+   *
+   * To add a new document: add an entry to the matching tome's
+   * documents array (or create a new tome object). No HTML changes
+   * are required.
    * ============================================================== */
-  var documents = [
+  var tomes = [
     {
-      id:    'carte-du-reseau',
-      title: 'Carte du Réseau',
-      desc:  'Carte complète du réseau des voies navigables ' +
-             'intérieures européennes.',
-      file:  'pdf/carte-du-reseau.pdf',
-      icon:  'fa-map'
+      id:    'tome-1',
+      label: 'Tome 1 — Histoire',
+      icon:  'fa-history',
+      documents: [
+        {
+          id:    't1-histoire',
+          title: 'Tome 1 — Histoire',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/tome1_-_Histoire.pdf'
+        },
+        {
+          id:    't1-soliton',
+          title: 'Annexe Tome 1 : Le Soliton',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/soliton.pdf'
+        }
+      ]
     },
     {
-      id:    'guide-navigation',
-      title: 'Guide de Navigation',
-      desc:  'Guide pratique à destination des navigateurs sur ' +
-             'les voies d\'eau intérieures.',
-      file:  'pdf/guide-navigation.pdf',
-      icon:  'fa-compass'
+      id:    'tome-2',
+      label: 'Tome 2 — Les écluses',
+      icon:  'fa-lock',
+      documents: [
+        {
+          id:    't2-ch1',
+          title: 'Chapitre 1 — Écluses en bois',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre1_Les_ecluses_en_bois.pdf'
+        },
+        {
+          id:    't2-ch2',
+          title: 'Chapitre 2 — Forme des écluses',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre2_Forme_des_ecluses.pdf'
+        },
+        {
+          id:    't2-ch3',
+          title: 'Chapitre 3 — Tours de contrôle',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre3_Tours_de_controle.pdf'
+        },
+        {
+          id:    't2-ch4',
+          title: 'Chapitre 4 — Postes de travail',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre4_Les_postes_de_travail.pdf'
+        },
+        {
+          id:    't2-ch5',
+          title: 'Chapitre 5 — Matériaux de construction',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre5_Materiaux_de_construction_des_ecluses.pdf'
+        },
+        {
+          id:    't2-ch6',
+          title: 'Chapitre 6 — Disposition des écluses',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre6_Disposition_des_ecluses.pdf'
+        },
+        {
+          id:    't2-ch7',
+          title: 'Chapitre 7 — Échelles d\'écluses',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre7_echelles_d_ecluse.pdf'
+        },
+        {
+          id:    't2-ch8',
+          title: 'Chapitre 8 — Bassin d\'épargne',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre8_bassin_d_epargne.pdf'
+        },
+        {
+          id:    't2-ch10',
+          title: 'Chapitre 10 — Les moulins',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre10_Moulins.pdf'
+        },
+        {
+          id:    't2-ch11',
+          title: 'Chapitre 11 — Vapeur',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre11_Vapeur.pdf'
+        },
+        {
+          id:    't2-ch12',
+          title: 'Chapitre 12 — Les portes',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome2_Chapitre12_Les_portes.pdf'
+        }
+      ]
     },
     {
-      id:    'reglementation',
-      title: 'Réglementation Fluviale',
-      desc:  'Textes réglementaires applicables à la navigation ' +
-             'fluviale en Europe.',
-      file:  'pdf/reglementation.pdf',
-      icon:  'fa-gavel'
+      id:    'tome-3',
+      label: 'Tome 3',
+      icon:  'fa-book',
+      documents: [
+        {
+          id:    't3-p1',
+          title: 'Tome 3 — Partie 1',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome3_Partie1.pdf'
+        },
+        {
+          id:    't3-p2',
+          title: 'Tome 3 — Partie 2',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome3_Partie2.pdf'
+        },
+        {
+          id:    't3-p3',
+          title: 'Tome 3 — Partie 3',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome3_Partie3.pdf'
+        },
+        {
+          id:    't3-p4',
+          title: 'Tome 3 — Partie 4',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome3_Partie4.pdf'
+        }
+      ]
     },
     {
-      id:    'horaires-ecluses',
-      title: 'Horaires des Écluses',
-      desc:  'Calendrier d\'ouverture et horaires détaillés des ' +
-             'écluses sur le réseau européen.',
-      file:  'pdf/horaires-ecluses.pdf',
-      icon:  'fa-clock'
+      id:    'tome-4',
+      label: 'Tome 4',
+      icon:  'fa-book',
+      documents: [
+        {
+          id:    't4-p1',
+          title: 'Tome 4 — Partie 1',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-4-partie-1.pdf'
+        },
+        {
+          id:    't4-p2',
+          title: 'Tome 4 — Partie 2',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-4-partie-2.pdf'
+        },
+        {
+          id:    't4-p3',
+          title: 'Tome 4 — Partie 3',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-4-partie-3.pdf'
+        },
+        {
+          id:    't4-p4',
+          title: 'Tome 4 — Partie 4',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-4-partie-4.pdf'
+        }
+      ]
+    },
+    {
+      id:    'tome-5',
+      label: 'Tome 5',
+      icon:  'fa-book',
+      documents: [
+        {
+          id:    't5-p1',
+          title: 'Tome 5 — Partie 1',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-5-partie-1.pdf'
+        },
+        {
+          id:    't5-p2',
+          title: 'Tome 5 — Partie 2',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-5-partie-2.pdf'
+        },
+        {
+          id:    't5-p3',
+          title: 'Tome 5 — Partie 3',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-5-partie-3.pdf'
+        },
+        {
+          id:    't5-p4',
+          title: 'Tome 5 — Partie 4',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-5-partie-4.pdf'
+        }
+      ]
+    },
+    {
+      id:    'tome-6',
+      label: 'Tome 6',
+      icon:  'fa-book',
+      documents: [
+        {
+          id:    't6-p1',
+          title: 'Tome 6 — Partie 1',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-6-partie-1.pdf'
+        },
+        {
+          id:    't6-p2',
+          title: 'Tome 6 — Partie 2',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-6-partie-2.pdf'
+        },
+        {
+          id:    't6-p3',
+          title: 'Tome 6 — Partie 3',
+          file:  'http://www.voiesdeaudeurope.eu/wp-content/uploads/2015/06/Tome-6-partie-3.pdf',
+          /*
+           * This document carries a closing note from the editor.
+           * It is displayed in the modal below the PDF viewer.
+           */
+          citation: 'Fin du tome\u00a06 :\n\n' +
+            'Le tome\u00a06 a \u00e9t\u00e9 termin\u00e9 le 21 aout 2010, date \u00e0 laquelle ' +
+            'Jacques de La Garde nous a quitt\u00e9s, terrass\u00e9 par un arr\u00eat ' +
+            'cardiaque dans sa 88\u00e8me ann\u00e9e. La table onomastique n\u2019a pas ' +
+            '\u00e9t\u00e9 faite, ni l\u2019index des photos ou textes emprunt\u00e9s.\n' +
+            'Cela se fera, mais il me faut du temps.\n\n' +
+            'Anna Marie Perrichon'
+        }
+      ]
     }
   ];
 
 
   /* ==============================================================
-   * 2. DYNAMIC MENU & CARD RENDERING
-   *
-   * Builds both the navbar dropdown and the document card grid
-   * from the documents[] array above.
+   * INTERNAL: flat lookup map built from the tomes array
+   * Used by getDocById() for O(1) access.
+   * ============================================================== */
+  var documentById = {};
+  $.each(tomes, function (i, tome) {
+    $.each(tome.documents, function (j, doc) {
+      documentById[doc.id] = doc;
+    });
+  });
+
+
+  /* ==============================================================
+   * 2. DYNAMIC MENU & DOCUMENT LIST RENDERING
    * ============================================================== */
 
   /**
-   * Build the navbar dropdown links and the document cards.
-   * Called once on DOM ready.
+   * Build the navbar dropdown and the documents section from
+   * the tomes[] array. Called once on DOM ready.
    */
   function buildDocumentUI() {
     var $dropdown = $('#documents-dropdown-menu');
-    var $cards    = $('#documents-cards');
+    var $list     = $('#documents-list');
 
-    $.each(documents, function (index, doc) {
+    $.each(tomes, function (tomeIndex, tome) {
 
-      /* ---- Navbar dropdown entry ---- */
+      /* ---- Navbar: Tome header + document links ---- */
+      if (tomeIndex > 0) {
+        $dropdown.append('<div class="dropdown-divider"></div>');
+      }
       $dropdown.append(
-        $('<a>', {
-          'class':        'dropdown-item',
-          'href':         '#',
-          'data-doc-id':  doc.id,
-          'text':         doc.title
-        })
+        '<h6 class="dropdown-header">' + escapeHtml(tome.label) + '</h6>'
       );
+      $.each(tome.documents, function (i, doc) {
+        $dropdown.append(
+          $('<a>', {
+            'class':       'dropdown-item',
+            'href':        '#',
+            'data-doc-id': doc.id,
+            'text':        doc.title
+          })
+        );
+      });
 
-      /* ---- Document card ---- */
-      var iconClass = doc.icon || 'fa-file-pdf';
-      var card = [
-        '<div class="col-sm-6 col-lg-3 mb-4" role="listitem">',
-        '  <div class="card h-100 shadow-sm document-card">',
-        '    <div class="card-body d-flex flex-column">',
-        '      <div class="card-icon mb-3" aria-hidden="true">',
-        '        <i class="fas ' + escapeHtml(iconClass) + ' fa-2x text-primary"></i>',
-        '      </div>',
-        '      <h5 class="card-title">' + escapeHtml(doc.title) + '</h5>',
-        '      <p class="card-text text-muted flex-grow-1">' + escapeHtml(doc.desc) + '</p>',
-        '      <button class="btn btn-primary btn-sm mt-3"',
-        '              data-doc-id="' + escapeHtml(doc.id) + '"',
-        '              aria-label="Consulter : ' + escapeHtml(doc.title) + '">',
-        '        <i class="fas fa-eye mr-1" aria-hidden="true"></i> Consulter',
-        '      </button>',
-        '    </div>',
-        '  </div>',
+      /* ---- Documents section: Tome card with list-group ---- */
+      var listItems = '';
+      $.each(tome.documents, function (i, doc) {
+        listItems += [
+          '<li class="list-group-item d-flex justify-content-between',
+          '          align-items-center py-2">',
+          '  <span>' + escapeHtml(doc.title) + '</span>',
+          '  <button class="btn btn-primary btn-sm flex-shrink-0 ml-3"',
+          '          data-doc-id="' + escapeHtml(doc.id) + '"',
+          '          aria-label="Consulter\u00a0: ' + escapeHtml(doc.title) + '">',
+          '    <i class="fas fa-eye mr-1" aria-hidden="true"></i>',
+          '    Consulter',
+          '  </button>',
+          '</li>'
+        ].join('\n');
+      });
+
+      var tomeCard = [
+        '<div class="tome-section mb-4">',
+        '  <h3 class="tome-heading">',
+        '    <i class="fas ' + escapeHtml(tome.icon) + ' mr-2" aria-hidden="true"></i>',
+        '    ' + escapeHtml(tome.label),
+        '  </h3>',
+        '  <ul class="list-group list-group-flush border rounded shadow-sm">',
+        listItems,
+        '  </ul>',
         '</div>'
       ].join('\n');
 
-      $cards.append(card);
+      $list.append(tomeCard);
     });
   }
 
 
   /* ==============================================================
    * 3. PDF MODAL VIEWER
-   *
-   * Finds the document by id, updates the modal title, loads the
-   * PDF into the iframe, and opens the Bootstrap modal.
    * ============================================================== */
 
   /**
    * Open the PDF viewer modal for the given document id.
-   * @param {string} docId – matches a documents[].id value
+   * If the document has a citation property, display it below the viewer.
+   * @param {string} docId – matches a tomes[].documents[].id value
    */
   function openPdfModal(docId) {
     var doc = getDocById(docId);
@@ -147,13 +338,30 @@
     $('#pdf-viewer').attr('src', doc.file);
 
     /* Update both download links */
-    var downloadLabel = 'Télécharger — ' + doc.title;
+    var downloadLabel = 'Télécharger\u00a0— ' + doc.title;
     $('#pdf-download-link')
       .attr('href', doc.file)
       .attr('aria-label', downloadLabel);
     $('#pdf-fallback-link')
       .attr('href', doc.file)
       .text(doc.title);
+
+    /* Show or hide the citation block */
+    var $citationBlock = $('#pdf-citation-block');
+    var $citationText  = $('#pdf-citation-text');
+    if (doc.citation) {
+      /* Render newlines as <br> elements safely */
+      var lines = doc.citation.split('\n');
+      $citationText.empty();
+      $.each(lines, function (i, line) {
+        if (i > 0) { $citationText.append($('<br>')); }
+        $citationText.append(document.createTextNode(line));
+      });
+      $citationBlock.removeClass('d-none');
+    } else {
+      $citationBlock.addClass('d-none');
+      $citationText.empty();
+    }
 
     /* Open the Bootstrap 4 modal */
     $('#pdfModal').modal('show');
@@ -165,9 +373,7 @@
    * @returns {Object|null}
    */
   function getDocById(id) {
-    return $.grep(documents, function (doc) {
-      return doc.id === id;
-    })[0] || null;
+    return documentById[id] || null;
   }
 
 
@@ -177,7 +383,7 @@
   function bindEvents() {
     /*
      * Delegated click handler on any element carrying [data-doc-id].
-     * Works for both the navbar dropdown items and the card buttons,
+     * Works for navbar dropdown items, list-group buttons, etc.,
      * even though they are injected after page load.
      */
     $(document).on('click', '[data-doc-id]', function (e) {
@@ -187,8 +393,8 @@
 
     /*
      * When the modal closes, clear the iframe src.
-     * This stops the PDF from continuing to render / stream in the
-     * background and frees browser memory.
+     * This stops the PDF from rendering in the background and
+     * frees browser memory.
      */
     $('#pdfModal').on('hidden.bs.modal', function () {
       $('#pdf-viewer').attr('src', '');
@@ -202,7 +408,7 @@
 
   /**
    * Safely escape a string for insertion into HTML.
-   * Uses jQuery's own text-node mechanism to avoid XSS.
+   * Uses jQuery's own text-node mechanism to prevent XSS.
    * @param  {string} str
    * @returns {string} HTML-escaped string
    */
