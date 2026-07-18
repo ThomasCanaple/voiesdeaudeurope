@@ -44,7 +44,7 @@
     {
       id:    'tome-1',
       label: 'Tome 1 - Histoire',
-      icon:  'fa-history',
+      icon:  'fa-book',
       documents: [
         {
           id:    't1-histoire',
@@ -61,7 +61,7 @@
     {
       id:    'tome-2',
       label: 'Tome 2 - Les écluses',
-      icon:  'fa-lock',
+      icon:  'fa-book',
       documents: [
         {
           id:    't2-ch1',
