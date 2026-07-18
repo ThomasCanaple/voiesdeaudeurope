@@ -1,5 +1,5 @@
 /**
- * app.js — Voies d'Eau d'Europe
+ * app.js - Voies d'Eau d'Europe
  *
  * Responsibilities:
  *   1. Tomes / documents configuration (edit here to add entries)
@@ -11,7 +11,7 @@
  *        • Shows an optional citation block (e.g. Tome 6, Partie 3)
  *        • Clears the iframe on modal close (stops PDF rendering)
  *        • Provides a download fallback link
- *   4. Event bindings (delegated — works on dynamically-added elements)
+ *   4. Event bindings (delegated - works on dynamically-added elements)
  *
  * Dependencies (must be loaded before this script):
  *   jQuery 3.x → Popper.js 1.x → Bootstrap 4.x
@@ -43,12 +43,12 @@
   var tomes = [
     {
       id:    'tome-1',
-      label: 'Tome 1 — Histoire',
+      label: 'Tome 1 - Histoire',
       icon:  'fa-history',
       documents: [
         {
           id:    't1-histoire',
-          title: 'Tome 1 — Histoire',
+          title: 'Tome 1 - Histoire',
           file:  'pdf/tome1_-_Histoire.pdf'
         },
         {
@@ -60,62 +60,62 @@
     },
     {
       id:    'tome-2',
-      label: 'Tome 2 — Les écluses',
+      label: 'Tome 2 - Les écluses',
       icon:  'fa-lock',
       documents: [
         {
           id:    't2-ch1',
-          title: 'Chapitre 1 — Écluses en bois',
+          title: 'Chapitre 1 - Écluses en bois',
           file:  'pdf/Tome2_Chapitre1_Les_ecluses_en_bois.pdf'
         },
         {
           id:    't2-ch2',
-          title: 'Chapitre 2 — Forme des écluses',
+          title: 'Chapitre 2 - Forme des écluses',
           file:  'pdf/Tome2_Chapitre2_Forme_des_ecluses.pdf'
         },
         {
           id:    't2-ch3',
-          title: 'Chapitre 3 — Tours de contrôle',
+          title: 'Chapitre 3 - Tours de contrôle',
           file:  'pdf/Tome2_Chapitre3_Tours_de_controle.pdf'
         },
         {
           id:    't2-ch4',
-          title: 'Chapitre 4 — Postes de travail',
+          title: 'Chapitre 4 - Postes de travail',
           file:  'pdf/Tome2_Chapitre4_Les_postes_de_travail.pdf'
         },
         {
           id:    't2-ch5',
-          title: 'Chapitre 5 — Matériaux de construction',
+          title: 'Chapitre 5 - Matériaux de construction',
           file:  'pdf/Tome2_Chapitre5_Materiaux_de_construction_des_ecluses.pdf'
         },
         {
           id:    't2-ch6',
-          title: 'Chapitre 6 — Disposition des écluses',
+          title: 'Chapitre 6 - Disposition des écluses',
           file:  'pdf/Tome2_Chapitre6_Disposition_des_ecluses.pdf'
         },
         {
           id:    't2-ch7',
-          title: 'Chapitre 7 — Échelles d\'écluses',
+          title: 'Chapitre 7 - Échelles d\'écluses',
           file:  'pdf/Tome2_Chapitre7_echelles_d_ecluse.pdf'
         },
         {
           id:    't2-ch8',
-          title: 'Chapitre 8 — Bassin d\'épargne',
+          title: 'Chapitre 8 - Bassin d\'épargne',
           file:  'pdf/Tome2_Chapitre8_bassin_d_epargne.pdf'
         },
         {
           id:    't2-ch10',
-          title: 'Chapitre 10 — Les moulins',
+          title: 'Chapitre 10 - Les moulins',
           file:  'pdf/Tome2_Chapitre10_Moulins.pdf'
         },
         {
           id:    't2-ch11',
-          title: 'Chapitre 11 — Vapeur',
+          title: 'Chapitre 11 - Vapeur',
           file:  'pdf/Tome2_Chapitre11_Vapeur.pdf'
         },
         {
           id:    't2-ch12',
-          title: 'Chapitre 12 — Les portes',
+          title: 'Chapitre 12 - Les portes',
           file:  'pdf/Tome2_Chapitre12_Les_portes.pdf'
         }
       ]
@@ -127,22 +127,22 @@
       documents: [
         {
           id:    't3-p1',
-          title: 'Tome 3 — Partie 1',
+          title: 'Tome 3 - Partie 1',
           file:  'pdf/Tome3_Partie1.pdf'
         },
         {
           id:    't3-p2',
-          title: 'Tome 3 — Partie 2',
+          title: 'Tome 3 - Partie 2',
           file:  'pdf/Tome3_Partie2.pdf'
         },
         {
           id:    't3-p3',
-          title: 'Tome 3 — Partie 3',
+          title: 'Tome 3 - Partie 3',
           file:  'pdf/Tome3_Partie3.pdf'
         },
         {
           id:    't3-p4',
-          title: 'Tome 3 — Partie 4',
+          title: 'Tome 3 - Partie 4',
           file:  'pdf/Tome3_Partie4.pdf'
         }
       ]
@@ -154,22 +154,22 @@
       documents: [
         {
           id:    't4-p1',
-          title: 'Tome 4 — Partie 1',
+          title: 'Tome 4 - Partie 1',
           file:  'pdf/Tome-4-partie-1.pdf'
         },
         {
           id:    't4-p2',
-          title: 'Tome 4 — Partie 2',
+          title: 'Tome 4 - Partie 2',
           file:  'pdf/Tome-4-partie-2.pdf'
         },
         {
           id:    't4-p3',
-          title: 'Tome 4 — Partie 3',
+          title: 'Tome 4 - Partie 3',
           file:  'pdf/Tome-4-partie-3.pdf'
         },
         {
           id:    't4-p4',
-          title: 'Tome 4 — Partie 4',
+          title: 'Tome 4 - Partie 4',
           file:  'pdf/Tome-4-partie-4.pdf'
         }
       ]
@@ -181,22 +181,22 @@
       documents: [
         {
           id:    't5-p1',
-          title: 'Tome 5 — Partie 1',
+          title: 'Tome 5 - Partie 1',
           file:  'pdf/Tome-5-partie-1.pdf'
         },
         {
           id:    't5-p2',
-          title: 'Tome 5 — Partie 2',
+          title: 'Tome 5 - Partie 2',
           file:  'pdf/Tome-5-partie-2.pdf'
         },
         {
           id:    't5-p3',
-          title: 'Tome 5 — Partie 3',
+          title: 'Tome 5 - Partie 3',
           file:  'pdf/Tome-5-partie-3.pdf'
         },
         {
           id:    't5-p4',
-          title: 'Tome 5 — Partie 4',
+          title: 'Tome 5 - Partie 4',
           file:  'pdf/Tome-5-partie-4.pdf'
         }
       ]
@@ -208,17 +208,17 @@
       documents: [
         {
           id:    't6-p1',
-          title: 'Tome 6 — Partie 1',
+          title: 'Tome 6 - Partie 1',
           file:  'pdf/Tome-6-partie-1.pdf'
         },
         {
           id:    't6-p2',
-          title: 'Tome 6 — Partie 2',
+          title: 'Tome 6 - Partie 2',
           file:  'pdf/Tome-6-partie-2.pdf'
         },
         {
           id:    't6-p3',
-          title: 'Tome 6 — Partie 3',
+          title: 'Tome 6 - Partie 3',
           file:  'pdf/Tome-6-partie-3.pdf',
           /*
            * This document carries a closing note from the editor.
@@ -383,13 +383,13 @@
     $('#pdfModalLabel').text(doc.title);
 
     /* Update download/open links */
-    var downloadLabel = 'Télécharger\u00a0— ' + doc.title;
+    var downloadLabel = 'Télécharger\u00a0- ' + doc.title;
     $('#pdf-download-link')
       .attr('href', doc.file)
       .attr('aria-label', downloadLabel);
     $('#pdf-open-link')
       .attr('href', doc.file)
-      .attr('aria-label', 'Ouvrir dans un nouvel onglet\u00a0— ' + doc.title);
+      .attr('aria-label', 'Ouvrir dans un nouvel onglet\u00a0- ' + doc.title);
     $('#pdf-fallback-link')
       .attr('href', doc.file)
       .text(doc.title);
@@ -452,7 +452,7 @@
       showPdfFallbackMessage(doc, downloadLabel);
     });
 
-    /* Set iframe source — this triggers PDF loading */
+    /* Set iframe source - this triggers PDF loading */
     $iframe.attr('src', viewerUrl);
   }
 
