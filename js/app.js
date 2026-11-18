@@ -225,7 +225,7 @@
            * It is displayed in the modal below the PDF viewer.
            */
           citation: 'Fin du tome\u00a06 :\n\n' +
-            'Le tome\u00a06 a \u00e9t\u00e9 termin\u00e9 le 21 aout 2010, date \u00e0 laquelle ' +
+            'Le tome\u00a06 a \u00e9t\u00e9 termin\u00e9 le 21 août 2010, date \u00e0 laquelle ' +
             'Jacques de La Garde nous a quitt\u00e9s, terrass\u00e9 par un arr\u00eat ' +
             'cardiaque dans sa 88\u00e8me ann\u00e9e. La table onomastique n\u2019a pas ' +
             '\u00e9t\u00e9 faite, ni l\u2019index des photos ou textes emprunt\u00e9s.\n' +
