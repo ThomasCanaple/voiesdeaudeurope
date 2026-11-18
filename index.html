@@ -114,9 +114,8 @@
 
     <!-- ==========================================================
          HERO SECTION
-         Full-viewport introduction with gradient overlay.
-         The background image (assets/hero-bg.jpg) is optional;
-         the gradient stands alone if the image is absent.
+         Full-viewport introduction with gradient background
+         (see .hero-section in styles.css to add a photo).
          ========================================================== -->
     <section id="accueil" class="hero-section d-flex align-items-center"
              aria-label="En-tête du site">
@@ -130,8 +129,7 @@
         <p class="hero-subtitle lead mt-3 mb-4">
           Des bateaux par-dessus les montagnes
         </p>
-        <a href="#documents" class="btn btn-light btn-lg px-5"
-           role="button">
+        <a href="#documents" class="btn btn-light btn-lg px-5">
           <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
           Découvrir nos ouvrages
         </a>
@@ -158,7 +156,7 @@
           il a représenté un contemporain anonyme étudiant, parmi les livres de sa bibliothèque.</p>
 
           <figure class="preface-figure my-4">
-            <img src="assets/preface001-min.png"
+            <img src="assets/preface001-min.webp" width="715" height="469" loading="lazy" decoding="async"
                  alt="Tableau de Carpaccio représentant Saint Augustin à Venise"
                  class="preface-img img-fluid" />
           </figure>
@@ -201,7 +199,7 @@
           un boulevard reliant la gare de l'Est à la gare de Lyon.</p>
 
           <figure class="preface-figure my-4">
-            <img src="assets/preface002-min.png"
+            <img src="assets/preface002-min.webp" width="224" height="300" loading="lazy" decoding="async"
                  alt="Canal Saint Martin à Paris"
                  class="preface-img img-fluid" />
           </figure>
@@ -229,7 +227,7 @@
           <p>De la Mer Blanche à la Mer Noire, de la Garonne à la Volga.</p>
 
           <figure class="preface-figure my-4">
-            <img src="assets/preface003-min.png"
+            <img src="assets/preface003-min.webp" width="713" height="494" loading="lazy" decoding="async"
                  alt="Voies navigables européennes"
                  class="preface-img img-fluid" />
           </figure>
@@ -351,13 +349,75 @@
           <a href="#accueil"   class="text-white-50 small mr-3">Accueil</a>
           <a href="#preface"   class="text-white-50 small mr-3">Préface</a>
           <a href="#documents" class="text-white-50 small mr-3">Documents</a>
-          <a href="#contact"   class="text-white-50 small">Contact</a>
+          <a href="#contact"   class="text-white-50 small mr-3">Contact</a>
+          <a href="#" class="text-white-50 small"
+             data-toggle="modal" data-target="#legalModal">Mentions légales</a>
         </div>
 
       </div>
     </div>
   </footer>
   <!-- /Footer -->
+
+  <!-- ==========================================================
+       MENTIONS LÉGALES MODAL (LCEN, loi n° 2004-575)
+       Non-professional private publisher: identity withheld, host
+       details given instead, as the LCEN allows.
+       ========================================================== -->
+  <div class="modal fade" id="legalModal" tabindex="-1" role="dialog"
+       aria-labelledby="legalModalLabel" aria-modal="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="legalModalLabel">Mentions légales</h5>
+          <button type="button" class="close text-white"
+                  data-dismiss="modal" aria-label="Fermer">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <h6 class="font-weight-bold">Éditeur du site</h6>
+          <p>
+            Ce site est édité à titre non professionnel par un particulier qui,
+            conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance
+            dans l'économie numérique (LCEN), a choisi de ne pas rendre publique
+            son identité. Ses coordonnées ont été communiquées à l'hébergeur.<br />
+            Contact : <a href="mailto:contact@voiesdeaudeurope.eu">contact@voiesdeaudeurope.eu</a>
+          </p>
+
+          <h6 class="font-weight-bold">Hébergement</h6>
+          <p>
+            OVH SAS<br />
+            2 rue Kellermann, 59100 Roubaix, France<br />
+            Téléphone : +33 9 72 10 10 07
+          </p>
+
+          <h6 class="font-weight-bold">Propriété intellectuelle</h6>
+          <p>
+            Les textes, photographies et documents PDF publiés sur ce site sont
+            la propriété de leurs auteurs et ayants droit. Toute reproduction ou diffusion,
+            totale ou partielle, sans autorisation préalable est interdite.
+          </p>
+
+          <h6 class="font-weight-bold">Données personnelles et cookies</h6>
+          <p class="mb-0">
+            Ce site ne dépose aucun cookie et ne collecte aucune donnée
+            personnelle. Les messages envoyés à l'adresse de contact ne servent
+            qu'à vous répondre.
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"
+                  data-dismiss="modal">Fermer</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- /Mentions légales -->
 
   <!-- ==========================================================
        PDF VIEWER MODAL
@@ -401,14 +461,6 @@
                 </a>
               </p>
             </iframe>
-          </div>
-
-          <!-- Informational notice shown only on small screens -->
-          <div class="d-md-none alert alert-info m-3 mb-0 small"
-               role="alert">
-            <i class="fas fa-info-circle mr-1" aria-hidden="true"></i>
-            Sur mobile (iOS/Android), le document PDF s’ouvrira
-            automatiquement dans un nouvel onglet.
           </div>
 
           <!-- Optional citation block — populated and shown by app.js

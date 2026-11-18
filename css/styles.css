@@ -148,15 +148,14 @@ section[id] {
 .hero-section {
   min-height: 80vh;
   padding: 6rem 1rem;
-  /* Gradient overlay on top of optional background image.
-     If assets/hero-bg.jpg is absent the gradient renders alone. */
+  /* To add a background photo, append it after the gradient:
+       , url('../assets/hero-bg.jpg') center / cover no-repeat */
   background:
     linear-gradient(
       135deg,
       rgba(27, 79, 138, 0.90) 0%,
       rgba(46, 134, 193, 0.80) 100%
-    ),
-    url('../assets/hero-bg.jpg') center / cover no-repeat;
+    );
 }
 
 .hero-title {

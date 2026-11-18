@@ -122,9 +122,9 @@ Les documents sont organisés par **Tomes** dans le fichier `js/app.js` :
 
 ## 📸 Image de fond (héro)
 
-Placez une image nommée `hero-bg.jpg` dans le dossier `assets/` pour
-personnaliser l'arrière-plan du héro. Si l'image est absente, le dégradé
-de couleur s'affiche seul.
+Le héro utilise un dégradé de couleur seul. Pour ajouter une photo, placez
+`hero-bg.jpg` dans `assets/` et ajoutez-la après le dégradé dans la règle
+`.hero-section` de `css/styles.css` (exemple en commentaire dans la règle).
 
 ---
 

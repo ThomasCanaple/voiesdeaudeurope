@@ -328,7 +328,9 @@
   }
 
   function openPdfInNewTab(fileUrl) {
-    var newWindow = window.open(fileUrl, '_blank', 'noopener');
+    /* No 'noopener' feature here: with it, window.open() always returns
+       null and a successful open would be reported as blocked. */
+    var newWindow = window.open(fileUrl, '_blank');
     if (newWindow) {
       newWindow.opener = null;
       return true;
@@ -438,7 +440,7 @@
     var fallbackTimer = window.setTimeout(function () {
       $spinner.remove();
       showPdfFallbackMessage(doc, downloadLabel);
-    }, 8000);
+    }, 30000);
 
     $iframe.one('load.pdfViewer', function () {
       window.clearTimeout(fallbackTimer);
