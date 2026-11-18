@@ -328,6 +328,15 @@
     return navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
   }
 
+  /* Pending "PDF did not load" timer; cleared on load and on modal close
+     so it cannot fire later over another document. */
+  var pdfFallbackTimer = null;
+
+  function clearPdfFallbackTimer() {
+    window.clearTimeout(pdfFallbackTimer);
+    pdfFallbackTimer = null;
+  }
+
   function getPdfViewerUrl(fileUrl) {
     return fileUrl + '#view=FitH';
   }
@@ -444,19 +453,20 @@
     $pdfContainer.append($spinner);
 
     var viewerUrl = getPdfViewerUrl(doc.file);
-    var fallbackTimer = window.setTimeout(function () {
+    clearPdfFallbackTimer();
+    pdfFallbackTimer = window.setTimeout(function () {
       $spinner.remove();
       showPdfFallbackMessage(doc, downloadLabel);
     }, 30000);
 
     $iframe.one('load.pdfViewer', function () {
-      window.clearTimeout(fallbackTimer);
+      clearPdfFallbackTimer();
       $spinner.remove();
     });
 
     /* iframe error events are unreliable for PDFs, but keep a handler just in case */
     $iframe.one('error.pdfViewer', function () {
-      window.clearTimeout(fallbackTimer);
+      clearPdfFallbackTimer();
       $spinner.remove();
       showPdfFallbackMessage(doc, downloadLabel);
     });
@@ -523,6 +533,7 @@
      * frees browser memory.
      */
     $('#pdfModal').on('hidden.bs.modal', function () {
+      clearPdfFallbackTimer();
       $('.pdf-container').find('.pdf-loading-spinner, .pdf-error-message').remove();
       $('#pdf-viewer').show().attr('src', 'about:blank').off('.pdfViewer');
       if (getDocIdFromHash()) { setDocumentHash(null); }
