@@ -320,7 +320,11 @@
    * ============================================================== */
 
   function isMobileDevice() {
-    return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+    if (/Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)) {
+      return true;
+    }
+    /* iPadOS 13+ reports itself as a Mac; only the touch screen gives it away */
+    return navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
   }
 
   function getPdfViewerUrl(fileUrl) {
