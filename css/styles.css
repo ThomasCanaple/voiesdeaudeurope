@@ -77,6 +77,20 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
+/* Inline SVG icons (sprite in index.html); sized by the text around them */
+.icon {
+  display:        inline-block;
+  height:         1em;
+  overflow:       visible;
+  vertical-align: -0.125em;
+  fill:           currentColor;
+}
+
+.icon-lg {
+  font-size:      1.333em;
+  vertical-align: -0.2em;
+}
+
 /* Make anchor links land below the sticky navbar */
 section[id] {
   scroll-margin-top: 70px;

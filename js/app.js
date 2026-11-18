@@ -26,7 +26,7 @@
    * Each tome has:
    *   id        {string}   – unique slug
    *   label     {string}   – heading shown in the UI
-   *   icon      {string}   – Font Awesome 5 class for the heading
+   *   icon      {string}   – id of an icon in the SVG sprite (index.html)
    *   documents {Array}    – list of documents in that tome
    *
    * Each document has:
@@ -44,7 +44,7 @@
     {
       id:    'tome-1',
       label: 'Tome 1 - Histoire',
-      icon:  'fa-book',
+      icon:  'book',
       documents: [
         {
           id:    't1-histoire',
@@ -61,7 +61,7 @@
     {
       id:    'tome-2',
       label: 'Tome 2 - Les écluses',
-      icon:  'fa-book',
+      icon:  'book',
       documents: [
         {
           id:    't2-ch1',
@@ -123,7 +123,7 @@
     {
       id:    'tome-3',
       label: 'Tome 3',
-      icon:  'fa-book',
+      icon:  'book',
       documents: [
         {
           id:    't3-p1',
@@ -150,7 +150,7 @@
     {
       id:    'tome-4',
       label: 'Tome 4',
-      icon:  'fa-book',
+      icon:  'book',
       documents: [
         {
           id:    't4-p1',
@@ -177,7 +177,7 @@
     {
       id:    'tome-5',
       label: 'Tome 5',
-      icon:  'fa-book',
+      icon:  'book',
       documents: [
         {
           id:    't5-p1',
@@ -204,7 +204,7 @@
     {
       id:    'tome-6',
       label: 'Tome 6',
-      icon:  'fa-book',
+      icon:  'book',
       documents: [
         {
           id:    't6-p1',
@@ -292,7 +292,7 @@
           '     href="' + escapeHtml(doc.file) + '"',
           '     data-doc-id="' + escapeHtml(doc.id) + '"',
           '     aria-label="Consulter\u00a0: ' + escapeHtml(doc.title) + '">',
-          '    <i class="fas fa-eye mr-1" aria-hidden="true"></i>',
+          '    ' + svgIcon('eye', 'mr-1'),
           '    Consulter',
           '  </a>',
           '</li>'
@@ -302,7 +302,7 @@
       var tomeCard = [
         '<div class="tome-section mb-4">',
         '  <h3 class="tome-heading">',
-        '    <i class="fas ' + escapeHtml(tome.icon) + ' mr-2" aria-hidden="true"></i>',
+        '    ' + svgIcon(tome.icon, 'mr-2'),
         '    ' + escapeHtml(tome.label),
         '  </h3>',
         '  <ul class="list-group list-group-flush border rounded shadow-sm">',
@@ -553,6 +553,22 @@
    */
   function escapeHtml(str) {
     return $('<div>').text(String(str)).html();
+  }
+
+  /* Width of each sprite icon relative to its height (viewBox ratio) */
+  var ICON_WIDTHS = { 'book': '0.875em', 'eye': '1.125em' };
+
+  /**
+   * Markup for an icon from the inline SVG sprite in index.html.
+   * @param  {string} name       – sprite symbol id without the "icon-" prefix
+   * @param  {string} extraClass – additional CSS classes
+   * @returns {string} HTML
+   */
+  function svgIcon(name, extraClass) {
+    return '<svg class="icon ' + escapeHtml(extraClass || '') + '"' +
+      ' width="' + (ICON_WIDTHS[name] || '1em') + '" height="1em"' +
+      ' aria-hidden="true" focusable="false">' +
+      '<use href="#icon-' + escapeHtml(name) + '"></use></svg>';
   }
 
 

@@ -33,7 +33,7 @@ voiesdeaudeurope/
 
 ### Prérequis
 
-Aucune dépendance locale — jQuery, Popper.js, Bootstrap et Font Awesome sont
+Aucune dépendance locale — jQuery, Popper.js et Bootstrap sont
 chargés depuis des CDN publics. Les PDF sont servis directement depuis
 `voiesdeaudeurope.eu`.
 
@@ -96,7 +96,7 @@ Les documents sont organisés par **Tomes** dans le fichier `js/app.js` :
    {
      id:    'tome-7',
      label: 'Tome 7',
-     icon:  'fa-book',
+     icon:  'book',      // Icône du sprite SVG (index.html)
      documents: [ /* vos documents ici */ ]
    }
    ```
@@ -117,7 +117,7 @@ du Tome 2.
 | jQuery          | 3.6.4   | Requis par Bootstrap 4 ; manipulation du DOM  |
 | Popper.js       | 1.16.1  | Requis par Bootstrap 4 (menus déroulants)     |
 | Bootstrap       | 4.6.2   | Mise en page, composants, grille, modales      |
-| Font Awesome    | 5.15.4  | Icônes vectorielles                           |
+| Font Awesome    | 5.15.4  | Icônes, copiées en sprite SVG dans index.html |
 
 Les polices Raleway et Open Sans (licence SIL OFL) sont hébergées dans
 `fonts/` : aucune requête n'est envoyée à Google.
