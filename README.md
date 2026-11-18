@@ -118,7 +118,9 @@ du Tome 2.
 | Popper.js       | 1.16.1  | Requis par Bootstrap 4 (menus déroulants)     |
 | Bootstrap       | 4.6.2   | Mise en page, composants, grille, modales      |
 | Font Awesome    | 5.15.4  | Icônes vectorielles                           |
-| Google Fonts    | —       | Typographies Raleway & Open Sans              |
+
+Les polices Raleway et Open Sans (licence SIL OFL) sont hébergées dans
+`fonts/` : aucune requête n'est envoyée à Google.
 
 > **Ordre de chargement JS** : jQuery → Popper.js → Bootstrap → app.js
 
