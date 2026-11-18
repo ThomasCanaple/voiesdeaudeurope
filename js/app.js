@@ -274,7 +274,7 @@
         $dropdown.append(
           $('<a>', {
             'class':       'dropdown-item',
-            'href':        '#',
+            'href':        doc.file,
             'data-doc-id': doc.id,
             'text':        doc.title
           })
@@ -288,12 +288,13 @@
           '<li class="list-group-item d-flex justify-content-between',
           '          align-items-center py-2">',
           '  <span>' + escapeHtml(doc.title) + '</span>',
-          '  <button class="btn btn-primary btn-sm flex-shrink-0 ml-3"',
-          '          data-doc-id="' + escapeHtml(doc.id) + '"',
-          '          aria-label="Consulter\u00a0: ' + escapeHtml(doc.title) + '">',
+          '  <a class="btn btn-primary btn-sm flex-shrink-0 ml-3"',
+          '     href="' + escapeHtml(doc.file) + '"',
+          '     data-doc-id="' + escapeHtml(doc.id) + '"',
+          '     aria-label="Consulter\u00a0: ' + escapeHtml(doc.title) + '">',
           '    <i class="fas fa-eye mr-1" aria-hidden="true"></i>',
           '    Consulter',
-          '  </button>',
+          '  </a>',
           '</li>'
         ].join('\n');
       });
@@ -427,12 +428,14 @@
       if (!openPdfInNewTab(doc.file)) {
         showPdfFallbackMessage(doc, downloadLabel);
         $('#pdfModal').modal('show');
+        setDocumentHash(doc.id);
       }
       return;
     }
 
     /* Open the Bootstrap 4 modal before attaching the PDF */
     $('#pdfModal').modal('show');
+    setDocumentHash(doc.id);
 
     /* Afficher spinner de chargement avant le chargement du PDF */
     var $spinner = $('<div class="pdf-loading-spinner d-flex align-items-center justify-content-center">' +
@@ -471,6 +474,27 @@
     return documentById[id] || null;
   }
 
+  /*
+   * Deep links: an open document is reflected in the URL as #doc-<id>,
+   * so a link to a single document can be shared and reopened.
+   */
+  var DOC_HASH_PREFIX = '#doc-';
+
+  function setDocumentHash(docId) {
+    if (!window.history || !window.history.replaceState) { return; }
+    var url = docId
+      ? DOC_HASH_PREFIX + docId
+      : window.location.pathname + window.location.search;
+    window.history.replaceState(null, '', url);
+  }
+
+  function getDocIdFromHash() {
+    var hash = window.location.hash;
+    if (hash.indexOf(DOC_HASH_PREFIX) !== 0) { return null; }
+    var id = decodeURIComponent(hash.slice(DOC_HASH_PREFIX.length));
+    return getDocById(id) ? id : null;
+  }
+
 
   /* ==============================================================
    * 4. EVENT BINDINGS
@@ -482,8 +506,15 @@
      * even though they are injected after page load.
      */
     $(document).on('click', '[data-doc-id]', function (e) {
+      /* Let Ctrl/Cmd/Shift-click open the PDF link natively */
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) { return; }
       e.preventDefault();
       openPdfModal($(this).data('doc-id'));
+    });
+
+    $(window).on('hashchange', function () {
+      var docId = getDocIdFromHash();
+      if (docId) { openPdfModal(docId); }
     });
 
     /*
@@ -494,6 +525,7 @@
     $('#pdfModal').on('hidden.bs.modal', function () {
       $('.pdf-container').find('.pdf-loading-spinner, .pdf-error-message').remove();
       $('#pdf-viewer').show().attr('src', 'about:blank').off('.pdfViewer');
+      if (getDocIdFromHash()) { setDocumentHash(null); }
     });
   }
 
@@ -519,6 +551,9 @@
   $(function () {
     buildDocumentUI();
     bindEvents();
+
+    var initialDocId = getDocIdFromHash();
+    if (initialDocId) { openPdfModal(initialDocId); }
   });
 
 }(jQuery));

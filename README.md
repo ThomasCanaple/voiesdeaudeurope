@@ -104,6 +104,10 @@ Les documents sont organisés par **Tomes** dans le fichier `js/app.js` :
 4. Sauvegardez — le titre de Tome, les liens de navigation et la liste des
    documents apparaîtront automatiquement, sans aucune modification du HTML.
 
+Chaque document a un lien direct partageable : `#doc-<id>`, par exemple
+`https://www.voiesdeaudeurope.eu/#doc-t2-ch3` ouvre directement le chapitre 3
+du Tome 2.
+
 ---
 
 ## 🔧 Dépendances (CDN — aucune installation requise)
