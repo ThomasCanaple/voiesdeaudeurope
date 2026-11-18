@@ -1,0 +1,56 @@
+# Configuration Apache pour l'hébergement OVH (dossier www/).
+# Si le site affiche « 500 Internal Server Error » après l'envoi de ce
+# fichier, supprimez-le : l'offre n'autorise alors pas ces réglages.
+
+AddDefaultCharset UTF-8
+
+# Pas de liste des fichiers quand un dossier n'a pas de page d'index
+Options -Indexes
+
+# ------------------------------------------------------------------
+# Redirection vers https://www.voiesdeaudeurope.eu
+# À activer UNIQUEMENT quand https://www.voiesdeaudeurope.eu s'ouvre
+# avec un cadenas : retirez le « # » au début des 4 lignes suivantes.
+# ------------------------------------------------------------------
+# RewriteEngine On
+# RewriteCond %{SERVER_PORT} 80 [OR]
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^ https://www.voiesdeaudeurope.eu%{REQUEST_URI} [L,R=301]
+
+# Types de fichiers récents parfois inconnus du serveur
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType font/woff2                .woff2
+  AddType image/webp                .webp
+</IfModule>
+
+# Compression des fichiers texte
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript text/javascript application/manifest+json image/svg+xml
+</IfModule>
+
+# Durée de mise en cache chez le visiteur.
+# CSS et JS : 1 jour, pour qu'une modification soit visible le lendemain.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                          "access plus 1 hour"
+  ExpiresByType text/html                 "access plus 0 seconds"
+  ExpiresByType text/css                  "access plus 1 day"
+  ExpiresByType application/javascript    "access plus 1 day"
+  ExpiresByType text/javascript           "access plus 1 day"
+  ExpiresByType image/png                 "access plus 1 month"
+  ExpiresByType image/jpeg                "access plus 1 month"
+  ExpiresByType image/webp                "access plus 1 month"
+  ExpiresByType image/svg+xml             "access plus 1 month"
+  ExpiresByType image/x-icon              "access plus 1 month"
+  ExpiresByType application/pdf           "access plus 1 month"
+  ExpiresByType font/woff2                "access plus 1 year"
+</IfModule>
+
+# En-têtes de sécurité de base
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>

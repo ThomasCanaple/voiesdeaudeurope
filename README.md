@@ -59,6 +59,32 @@ Ouvrez ensuite `http://localhost:8080` dans votre navigateur.
 
 ---
 
+## 🌐 Mise en ligne (hébergement gratuit OVH, 100 Mo)
+
+Le site est entièrement statique : il suffit de copier les fichiers dans le
+dossier `www/` de l'hébergement, par FTP (FileZilla par exemple). Les
+identifiants FTP se trouvent dans l'espace client OVH, rubrique Hébergements,
+onglet FTP-SSH.
+
+**À envoyer** : tout le contenu du dépôt, y compris le fichier caché
+`.htaccess`. **À ne pas envoyer** : les dossiers `.git/` et `.claude/`, et
+`README.md`.
+
+Le site occupe environ 87 Mo : il reste donc une dizaine de Mo libres sur
+l'offre gratuite pour de nouveaux PDF.
+
+Après la mise en ligne :
+
+1. Vérifiez que `https://www.voiesdeaudeurope.eu` s'ouvre avec un cadenas
+   (certificat SSL actif). Sinon, activez le certificat gratuit dans l'espace
+   client OVH.
+2. Une fois le HTTPS en place, activez la redirection décrite dans
+   `.htaccess` (retirer le `#` devant les 4 lignes indiquées).
+3. Ne modifiez jamais les enregistrements MX et SPF de la zone DNS : ils
+   acheminent le courrier de `contact@voiesdeaudeurope.eu`.
+
+---
+
 ## 📚 Structure des documents
 
 Les documents sont organisés par **Tomes** dans le fichier `js/app.js` :
