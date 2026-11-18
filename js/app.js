@@ -127,22 +127,22 @@
       documents: [
         {
           id:    't3-p1',
-          title: 'Tome 3 - Partie 1',
+          title: 'Partie 1 - Les portes, les chemins de l\'eau',
           file:  'pdf/Tome3_Partie1.pdf'
         },
         {
           id:    't3-p2',
-          title: 'Tome 3 - Partie 2',
+          title: 'Partie 2 - Vannes, amarrages, naissance d\'un canal',
           file:  'pdf/Tome3_Partie2.pdf'
         },
         {
           id:    't3-p3',
-          title: 'Tome 3 - Partie 3',
+          title: 'Partie 3 - Réservoirs, travaux, irrigation',
           file:  'pdf/Tome3_Partie3.pdf'
         },
         {
           id:    't3-p4',
-          title: 'Tome 3 - Partie 4',
+          title: 'Partie 4 - Halage, toueurs et tracteurs, jardins',
           file:  'pdf/Tome3_Partie4.pdf'
         }
       ]
@@ -154,22 +154,22 @@
       documents: [
         {
           id:    't4-p1',
-          title: 'Tome 4 - Partie 1',
+          title: 'Partie 1 - Plantations, écologie, aménagement des rivières',
           file:  'pdf/Tome-4-partie-1.pdf'
         },
         {
           id:    't4-p2',
-          title: 'Tome 4 - Partie 2',
+          title: 'Partie 2 - Rivières canalisées, canaux maritimes, souterrains',
           file:  'pdf/Tome-4-partie-2.pdf'
         },
         {
           id:    't4-p3',
-          title: 'Tome 4 - Partie 3',
+          title: 'Partie 3 - Souterrains des villes, ponts anciens',
           file:  'pdf/Tome-4-partie-3.pdf'
         },
         {
           id:    't4-p4',
-          title: 'Tome 4 - Partie 4',
+          title: 'Partie 4 - Ponts suspendus, métalliques, en béton',
           file:  'pdf/Tome-4-partie-4.pdf'
         }
       ]
@@ -181,22 +181,22 @@
       documents: [
         {
           id:    't5-p1',
-          title: 'Tome 5 - Partie 1',
+          title: 'Partie 1 - Ponts-canaux, ponts tournants et ponts-levis',
           file:  'pdf/Tome-5-partie-1.pdf'
         },
         {
           id:    't5-p2',
-          title: 'Tome 5 - Partie 2',
+          title: 'Partie 2 - Ponts basculants, levants et flottants, bacs, signalisation',
           file:  'pdf/Tome-5-partie-2.pdf'
         },
         {
           id:    't5-p3',
-          title: 'Tome 5 - Partie 3',
+          title: 'Partie 3 - Maisons éclusières et dépendances',
           file:  'pdf/Tome-5-partie-3.pdf'
         },
         {
           id:    't5-p4',
-          title: 'Tome 5 - Partie 4',
+          title: 'Partie 4 - Cheminées, grues, monuments et décors',
           file:  'pdf/Tome-5-partie-4.pdf'
         }
       ]
@@ -208,17 +208,17 @@
       documents: [
         {
           id:    't6-p1',
-          title: 'Tome 6 - Partie 1',
+          title: 'Partie 1 - Plans inclinés, les pionniers',
           file:  'pdf/Tome-6-partie-1.pdf'
         },
         {
           id:    't6-p2',
-          title: 'Tome 6 - Partie 2',
+          title: 'Partie 2 - Plans inclinés et ascenseurs',
           file:  'pdf/Tome-6-partie-2.pdf'
         },
         {
           id:    't6-p3',
-          title: 'Tome 6 - Partie 3',
+          title: 'Partie 3 - Pentes d\'eau et grands ouvrages récents',
           file:  'pdf/Tome-6-partie-3.pdf',
           /*
            * This document carries a closing note from the editor.
